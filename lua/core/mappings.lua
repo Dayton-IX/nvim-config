@@ -45,6 +45,7 @@ M.general = {
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
+    ["<leader>wv"] = { "<cmd> vnew <CR>", "new vertical window" },
   },
 
   t = {
