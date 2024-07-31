@@ -1,3 +1,5 @@
+local lspconfig = require "lspconfig"
+
 dofile(vim.g.base46_cache .. "lsp")
 require "nvchad_ui.lsp"
 
@@ -56,6 +58,24 @@ require("lspconfig").lua_ls.setup {
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
+    },
+  },
+}
+
+-- Enable LSP for Tailwind CSS
+lspconfig.tailwindcss.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  filetypes = { "typescriptreact", "javascriptreact" },
+  init_options = {
+    userLanguages = {
+      typescriptreact = "html",
+      javascriptreact = "html",
+    },
+  },
+  settings = {
+    tailwindCSS = {
+      classAttributes = { "class", "className" },
     },
   },
 }
